@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+html
+	head
+		//- base(src="localhost")
+		meta(charset="UTF-8")
+		meta(name='viewport', content='width=device-width, initial-scale=1' )
+		link(rel="stylesheet", href="css/sty-sec.css")
+		link(rel="stylesheet", href="css/sty.css")
+		title Luis Migueles
+		style.
+			body{
+				background-attachment: fixed;
+			}
+			.container{
+				justify-content: center!important;
+			}
+	body
+		header
+			a(href="index.html"): h1 Luis Migueles
+		main
+			.container.cnt-hide
+				.container-header
+						h2 SHOP
+						a(href="shop.html")#ctavolver
+							.volver Volver
+								img(src="img/previous.png", alt="")
+			.container.cnt-hide
+				h2.item-titulo Monkey
+				img(src="js/res/js.png", alt="").item-img
+				h2.item-precio $ 100.00
+					span u.
+				.item-cant
+					select(name="cant")
+						option(value="1") 1
+						option(value="2") 2
+					span.item-cant-span Cant:
+				.cta-carrito AÑADIR CARRITO
+				p.item-desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint mollitia eum rem ad voluptate eos, fugit molestias voluptatum similique expedita? Est neque sunt laborum excepturi aliquam rerum quod fugit sit.
+				.item-ficha
+					ul
+						li
+							span.bold Peso: 
+							span 90kg
+						li
+							span.bold Color: 
+							span Amarillo
+						li
+							span.bold Alto: 
+							span 300m
+						li
+							span.bold Ancho: 
+							span 200m
+							
+
+
+			#cnt_form
+				#close
+				input(type="text", name="nombre", placeholder="Nombre")
+				input(type="email", name="email", placeholder="Correo electrónico")
+				textarea(name="text", cols="30", rows="10", placeholder="Mensaje")
+				button(id="submit") Enviar
+		footer
+			p Copyright &copy; 2017 Nicolas Migueles
+			.right
+				.contacto Contacto
+				.social 
+					a(href="http://instagram.com/luismigueles800", target="_blank")
+						img(src="img/instagram.svg", rel="nofollow")
+					a(href="https://twitter.com/luismigueles", target="_blank")
+						img(src="img/twitter.svg", rel="nofollow")
+		script(src="js/res/jquery-3.1.1.min.js")
+		script(src="js/main.js")

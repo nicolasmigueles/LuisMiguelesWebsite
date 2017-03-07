@@ -1,0 +1,12 @@
+// content slider css nicolas migueles //
+@keyframes slide {
+	0%,5%{
+		left: -100%;
+	}
+	7%,50%{
+		left: 0;
+	}
+	52%,100% {
+		left: 100%;
+	}
+}

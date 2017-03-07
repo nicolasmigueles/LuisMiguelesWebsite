@@ -1,0 +1,254 @@
+@import "variables"
+// SHOP PAGE - last edit: 25/2/17 Nicolás Migueles
+.container-header
+	left: 0
+	position: absolute
+	top: 5em
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-flow: column wrap
+	width: 100%
+	h2
+		color: $verde
+		letter-spacing: 0.2em
+		margin-top: -.2em
+		margin-bottom: .5em
+	.volver
+		position: absolute
+		left: 0
+		color: transparent
+		top: -5px
+		width: 20vw
+		height: 30px
+		img
+			position: absolute
+			width:  30px
+			left: 15px
+			z-index: 20
+.shop-grid	
+	display: flex
+	flex-flow: column	
+	align-items: center
+	justify-content: space-between
+	margin-top: 70px
+	width: 100%
+	.shop-item
+		height: 80px
+		width: 100%
+		display: flex
+		justify-content: flex-start		
+		background: rgba(#000,.8)
+		border-bottom: 3px solid white
+		margin-bottom: 1em
+
+		.shop-item-img
+			width: 25%
+			img
+				width: 80px
+				height: 80px							
+		.shop-item-info
+			position: relative
+			width: 75%
+			padding: .5em 0 0 1em		
+			white-space: nowrap
+			overflow: hidden
+			.shop-item-desc
+				display: none
+			.shop-item-name
+				text-overflow: ellipsis
+				white-space: nowrap
+				overflow: hidden
+				font-size: 1.4em
+				padding: 0 0 1em 0	
+			.shop-item-precio
+				display: flex
+				letter-spacing: 0.1em
+				justify-content: flex-end
+				padding-right: .5em					
+			.shop-item-precio-oferta
+				left: 3em
+				position: absolute
+				letter-spacing: 0.1em
+				justify-content: flex-end
+				padding-right: .5em
+				display: none
+#search
+	z-index: 5
+	margin: 0
+	padding: 0
+	width: 90vw
+	display: flex
+	justify-content: center
+	//background: lime
+	height: 50px!important
+	input
+		border-radius: 0
+		box-sizing: border-box
+		padding: .5em 1em
+		width: 100%
+		border: none
+		color: white
+		font-size: 1.2em
+		height: 100%!important
+		background: rgba(#000,.8)
+		margin-bottom: 2em
+		border-bottom: 3px solid darken(lightgrey,20%)
+		transition: border 300ms ease-in-out
+		&:focus
+			outline: none
+			border-bottom-color: white
+.fixed
+	#search
+		input
+			position: fixed
+			top: 0
+			left: 0
+			width: 100vw
+			height: 45px!important
+			z-index: 100
+			border-bottom-color: $verde
+			background: rgba(#000,.8)
+			&:placeholder-shown
+				color: white
+//TALLER PAGE - last edit: 25/2/17 Nicolás Migueles
+.svg
+	margin-top: 10px
+	transform: scale(1.2)
+.full
+	width: 100vw
+	margin-top: 90px
+.cta-ins
+	z-index: 10
+	cursor: pointer
+	width: 100vw
+	left: 0
+	top: 0
+	background: white
+	height: 70px
+	display: flex
+	align-items: center
+	justify-content: center
+	letter-spacing: 3px
+	color: white
+	font-weight: 900
+	position: relative
+	button
+		margin-top: 20px
+		font-size: 1.5em
+		width: 90%
+		height: 50px
+		border-radius: 2em
+		background: black
+		color: white
+		border: none
+.container-white
+	background: white
+	top: 225px
+	left: 0
+	width: 100vw
+	display: flex
+	justify-content: center
+.contenido
+	margin-top: 20px
+	width: 90vw
+	display: flex
+	flex-wrap: wrap
+	color: black
+	margin-bottom: 2em
+	h1
+		font-weight: 300
+		font-size: 1.5em
+		text-align: center
+		letter-spacing: 1px
+		margin-bottom: 10px
+.col
+	width: 100%
+	flex: 1 0 auto
+	margin-bottom: 10px
+.ul
+	list-style: none
+	line-height: 1.5
+	font-size: 1em
+.titulo
+	font-size: 1.2em
+	font-weight: 900
+	margin-bottom: 5px
+.footer-taller 
+	margin-top: 0
+.informacion
+	.spancenter
+		margin-top: 10px
+		width: 100%
+		text-align: center
+		span
+			font-size: .9em
+.reform //NO TOCAR FIX PARA EL CONTACTO 
+	width: 90vw
+	top: -60px
+// PRODUCTO PAGE - last edit: 26/2/17 Nicolás Migueles
+.item-titulo
+	margin-top: 10px
+	margin-bottom: 30px
+	text-align: center
+.item-img
+	width: 90vw
+	height: 90vw
+	margin-bottom: 20px
+.item-precio
+	font-size: 2em
+	margin-right: auto
+	width: 70%
+	//background: rgba(lime,.2)
+	span
+		padding-left: 5px
+		font-size: 16px
+.item-cant
+	position: relative
+	display: flex
+	align-items: center
+	select
+		appearance: none
+		margin-left: auto
+		width: 60px
+		height: 35px
+		border: none
+		background: rgba(#000,.7)
+		color: white
+		padding-left: 5px
+	.item-cant-span
+		font-size: 15px
+		position: absolute
+		left: -45px
+		bottom: 5px
+		font-weight: 900
+.item-desc
+	margin-top: 20px
+	width: 100%
+	//text-align: justify
+	line-height: 1.3
+	margin-bottom: 20px
+.item-ficha
+	width: 100%
+	background: rgba(white,.8)
+	border-radius: 10px
+	color: black
+	ul
+		list-style: square
+		padding: 15px 30px
+		line-height: 1.5
+		.bold
+			font-weight: 900
+.cta-carrito
+	width: 100%
+	height: 45px 
+	background: rgba(white,.9)
+	color: black
+	text-align: center
+	font-weight: 900
+	font-size: 1.5em
+	line-height: 45px
+	border-radius: 5px
+	margin-top: 20px
+	&:hover
+		background: rgba(white,1)

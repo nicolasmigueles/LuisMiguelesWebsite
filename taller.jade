@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+html
+	head
+		//- base(src="localhost")
+		meta(charset="UTF-8")
+		meta(name='viewport', content='width=device-width, initial-scale=1' )
+		link(rel="stylesheet", href="css/sty-sec.css")
+		link(rel="stylesheet", href="css/sty.css")
+		title Luis Migueles
+		style.
+			body{
+				background-attachment: fixed;
+			}
+			.container{
+				justify-content: center!important;
+			}
+	body
+		header
+			a(href="index.html"): h1 Luis Migueles
+		main.full
+			.container.cnt-hide
+				.container-header
+					a(href="index.html")#ctavolver
+						.volver
+							img(src="img/previous.png", alt="")
+					.svg.
+						<svg width="125" height="67" xmlns="http://www.w3.org/2000/svg">
+						 <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+						 <g>
+						  <g id="svg_8">
+						   <text xml:space="preserve" text-anchor="start" font-family="Arimo" font-size="24" id="svg_1" y="18.830506" x="17.867188" stroke-width="0" stroke="#000" fill="#ffffff">TALLER</text>
+						   <text xml:space="preserve" text-anchor="start" font-family="Arimo" font-size="13" id="svg_2" y="36.6875" x="54.031251" stroke-width="0" stroke="#000" fill="#ffffff">DE</text>
+						   <text xml:space="preserve" text-anchor="start" font-family="Arimo" font-size="26" id="svg_3" y="62.369271" x="5.273438" stroke-width="0" stroke="#000" fill="#ffffff">TÉCNICA</text>
+						   <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="31.18751" x2="44.919071" y1="31.18751" x1="5.906252" stroke-width="2" stroke="#06e764" fill="none"/>
+						   <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="31.18751" x2="119.419095" y1="31.18751" x1="80.406276" stroke-width="2" stroke="#06e764" fill="none"/>
+						  </g>
+						 </g>
+						</svg>
+			.cta-ins.cnt-hide.ins-hide
+				button#cta-ins INSCRIBITE
+			.container-white.cnt-hide.ins-hide
+				.contenido
+					h1 Taller de Técnica de la Carrera
+					.col
+						.titulo Temas a Tratar
+						ul.temas.ul
+							li • Fundamentos de la técnica de carrera. 
+							li • Aspectos básicos de la biomecánica. 
+							li • Prevenir lesiones. 
+							li • Ejercicios específicos para corredores y recomendaciones. 
+					.col
+						ul.informacion.ul
+							.titulo Información
+							li Día: 22 de Febrero
+							li Lugar: Navarro 5130
+							li Costo: $ 300
+							.spancenter
+								span Se abona en el lugar, el día del evento.<br>Cupos limitados, al final del taller se hace entrega de un diploma de participación
+			#ins_form.
+				<form action="" id="ins" method="post" enctype="multipart/form-data">
+				<input name="name" id="form-name" class="ins" type="text" placeholder="Nombre...">
+				<input name="apellido" id="form-apellido" class="ins" type="text" placeholder="Apellido...">
+				<input name="email" id="form-email" class="ins" type="e-mail" placeholder="E-Mail...">
+				<input name="tel" id="form-tel" class="ins" type="text" placeholder="Celular...">
+				<input name="fecha" id="form-fecha" class="ins disabled" type="text" value="22 de enero" disabled>
+				<div class="cta-ins-form">Inscribirme</div>
+				</form>
+			#cnt_form.reform
+				#close
+				input(type="text", name="nombre", placeholder="Nombre")
+				input(type="email", name="email", placeholder="Correo electrónico")
+				textarea(name="text", cols="30", rows="10", placeholder="Mensaje")
+				button(id="submit") Enviar
+				//-button.cancelar Cancelar
+		footer.footer-taller
+			p Copyright &copy; 2017 Nicolas Migueles
+			.right
+				.contacto Contacto
+				.social 
+					a(href="http://instagram.com/luismigueles800", target="_blank")
+						img(src="img/instagram.svg", rel="nofollow")
+					a(href="https://twitter.com/luismigueles", target="_blank")
+						img(src="img/twitter.svg", rel="nofollow")
+		script(src="js/res/jquery-3.1.1.min.js")
+		script(src="js/main.js")
+		script(src="js/ins.js")

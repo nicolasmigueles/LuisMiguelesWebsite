@@ -1,0 +1,424 @@
+// TABLET
+@media (min-width: 600px) 
+	header
+		h1
+			margin-top: .5em
+			font-size: 3.5em
+	main
+		width: 90vw
+		.container
+			margin-top: 1.5em
+			.a
+				width: 72%
+				height: $alto
+				margin-bottom: 3%
+				h1
+					font-size: 2.5em
+			.b 
+				width: 40%
+				height: $alto
+				order: 2
+				margin-bottom: 3%
+				p
+					font-size: 2.3em
+					span
+						font-size: .6em
+					.line
+						width: 50px
+
+			.c 
+				width: 25%
+				height: $alto
+				margin-bottom: 3%
+				.wraper
+					margin: auto
+					align-items: flex-start
+					h1
+						font-size: 4em
+					span
+						font-size: 1.3em
+			.d 
+				order: 2
+				width: 55%
+				height: $alto
+				margin-bottom: 3%
+				h1
+					margin: auto .5em
+					font-size: 3em
+				p
+					margin: auto .8em
+					font-size: 2em
+	footer
+		width: 90vw
+		margin: auto
+		margin-bottom: 1em
+		background: none
+		padding-left: 0
+		padding-right: 0
+		p
+			width: 50%
+			font-size: 1em
+		.right
+			width: 50%
+			.contacto
+				padding: .3em 2em
+				font-size: 1em
+			.social
+				width: 40%
+				padding-bottom: .7em
+				margin-bottom: .2em
+				img
+					width: 130%
+					height: 130%
+	#cnt_form
+		max-width: 70vw
+		button
+			margin-right: auto
+			width: 12em
+	//SHOP
+	.container-header
+		margin-top: -10em
+		position: relative
+		h2
+			font-size: 2.2em
+		#search
+			position: absolute
+			right: 0
+			margin-top: 4.5em
+			width: 50vw
+			input
+				height: 45px
+		.volver
+			img
+				display: none
+			display: block
+			box-sizing: border-box
+			background: rgba(#000, .8)
+			position: absolute
+			left: 0
+			width: 9vw
+			height: 45px
+			margin-top: 2.75em
+			padding: .5em 1.6em
+			font-size: 1.2em
+			color: darken(lightgrey,20%)
+			border-bottom: 3px solid darken(lightgrey,20%)
+			transition: all 300ms ease-in-out
+			&:hover
+				color: white
+				border-bottom-color: white
+			&:before,&:after
+				content: ''
+				width: 1em
+				height: 3px
+				background: white
+				position: absolute
+				left: -0.4em
+				top: 0
+				border-radius: 1em
+			&:after
+				transform: rotate(45deg) translate(26.5px,8px) scale(.8)
+			&:before
+				transform: rotate(-45deg) translate(0px,20px) scale(.8)			
+	.shop-grid
+		.shop-item
+			height: 120px
+
+			.shop-item-img
+				width: 120px
+				img
+					width: 100%
+					height: 100%
+			.shop-item-info
+				width: calc(100% - 120px)
+				.shop-item-desc
+					margin-top: -1em
+					display: block
+					font-size: .9em
+					text-overflow: ellipsis
+					white-space: nowrap
+					overflow: hidden
+				.shop-item-precio
+					position: absolute
+					right: 0
+					font-size: 1.5em
+					bottom: .2em
+				.shop-item-precio-oferta
+					font-size: 1.5em
+					bottom: .2em
+					right: 6em
+	.fixed
+		#search
+			input
+				position: relative
+				border-bottom-color: white
+				background: rgba(#000,.5)
+// LAPTOP
+@media (min-width: 1025px) 
+	header
+		h1
+			margin-top: .5em
+			font-size: 4.5em
+			margin-left: 15px
+	main
+		width: 60vw
+		.container
+			//position: relative
+			margin-top: 1.5em
+			.a
+				width: 72%
+				height: $alto
+				margin-bottom: 16px
+				h1
+					font-size: 2.5em
+			.b 
+				width: 40%
+				height: $alto
+				order: 2
+				margin-bottom: 16px
+				p
+					font-size: 2.3em
+					span
+						font-size: .6em
+					.line
+						width: 50px
+			.c 
+				width: 25%
+				height: $alto
+				margin-bottom: 16px
+				.wraper
+					margin: auto
+					align-items: flex-start
+					h1
+						font-size: 5em
+					span
+						font-size: 1.6em
+			.d 
+				order: 2
+				width: 55%
+				height: $alto
+				margin-bottom: 16px
+				h1
+					margin: auto .5em
+					font-size: 3em
+				p
+					margin: auto .9em
+					font-size: 2em
+	footer
+		width: 60vw
+		margin: auto
+		margin-bottom: 0
+		background: none
+		padding-left: 0
+		padding-right: 0
+		p
+			width: 50%
+		.right
+			width: 50%
+			.contacto
+				padding: .1em 1em
+				font-size: .9em
+				margin-bottom: .7em
+				background: rgba(white,.7)
+				border: none
+				color:  black
+				font-weight: bold
+				border-radius: 1em
+			.social
+				width: 90px
+				margin-bottom: .2em
+				margin-right: 200px
+				img
+					width: 30px
+					height: 30px
+	#cnt_form
+		button
+			margin-right: auto
+			width: 12em
+	//SHOP
+	.container-header
+		width: 100%
+		margin-top: 0
+		position: relative
+		top: 0
+		//background: lime
+		h2
+			font-size: 2.2em
+		#search
+			position: absolute
+			right: 0
+			margin: 0
+			top: 55px
+			width: 50vw
+		.volver
+			height: 50px		
+			margin: 0
+			top: 55px
+			padding: 12px  30px	
+	.shop-grid
+		.shop-item
+			height: 120px
+
+			.shop-item-img
+				width: 120px
+				img
+					width: 100%
+					height: 100%
+			.shop-item-info
+				width: calc(100% - 120px)
+				.shop-item-desc
+					margin-top: -1em
+					display: block
+					font-size: .9em
+					text-overflow: ellipsis
+					white-space: nowrap
+					overflow: hidden
+				.shop-item-precio
+					position: absolute
+					right: 0
+					font-size: 1.5em
+					bottom: .2em
+				.shop-item-precio-oferta
+					font-size: 1.5em
+					bottom: .2em
+					right: 6em
+	.fixed
+		#search
+			input
+				position: relative
+				border-bottom-color: white
+				background: rgba(#000,.5)
+	.oferta
+		.shop-item-img
+			position: relative
+			&:before
+				transform: rotate(0deg)
+				width: 120px
+				margin-left: 0em
+				bottom: 0
+				background: rgba(#000,.4)
+// HD
+@media (min-width: 1800px) 
+	$alto : 170px
+	header
+		h1
+			margin-top: .5em
+			font-size: 5.5em
+	main
+		width: 900px
+		.container
+			margin-top: 1.5em
+			.a
+				width: 72%
+				height: $alto
+				margin-bottom: 16px
+				h1
+					font-size: 2.7em
+					span
+						font-size: 1.2em
+			.b 
+				width: 40%
+				height: $alto
+				order: 2
+				margin-bottom: 16px
+				p
+					font-size: 2.5em
+					span
+						font-size: .5em
+					.line
+						margin-top: 3px
+						width: 60px
+						left: 0px
+						&:nth-child(2)
+							right: 0px
+			.c 
+				width: 25%
+				height: $alto
+				margin-bottom: 16px
+				.wraper
+					margin: auto
+					align-items: center
+					h1
+						margin-top: -6px
+						align-self: flex-start
+						font-size: 6em
+					span
+						margin-left: 5px
+						font-size: 1.6em
+			.d 
+				order: 2
+				width: 55%
+				height: $alto
+				margin-bottom: 16px
+				line-height: 3em
+				h1
+					margin: auto .5em
+					font-size: 3.2em
+				p
+					margin: auto .8em
+					font-size: 2.2em
+	footer
+		width: 900px
+		margin: auto
+		margin-bottom: 0
+		background: none
+		padding-left: 0
+		padding-right: 0
+		p
+			width: 50%
+			font-size: .9em
+		.right
+			width: 50%
+			.social
+				margin-right: 1em
+				width: 80px
+				margin-bottom: .2em
+				img
+					width: 30px
+					height: 30px
+	#cnt_form
+		width: 1000px
+		button
+			margin-right: auto
+			width: 12em
+	//SHOP
+	.container-header
+		#search
+			width: 750px
+		.volver
+			width: 140px!important
+			padding: 12px  40px
+	.shop-grid
+		width: 900px
+		.shop-item
+			height: 120px
+			.shop-item-img
+				width: 120px
+				img
+					width: 100%
+					height: 100%
+			.shop-item-info
+				width: calc(100% - 150px)
+				.shop-item-desc
+					margin-top: -1em
+					display: block
+					font-size: .9em
+					text-overflow: ellipsis
+					white-space: nowrap
+					overflow: hidden
+				.shop-item-precio
+					position: absolute
+					right: 0
+					padding: 0
+					font-size: 1.5em
+					bottom: .2em
+				.shop-item-precio-oferta
+					font-size: 1.5em
+					bottom: .2em
+					right: 6em
+	.fixed
+		#search
+			input
+				position: relative
+				border-bottom-color: white
+				background: rgba(#000,.5)

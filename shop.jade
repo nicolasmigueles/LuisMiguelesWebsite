@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+html
+	head
+		//- base(src="localhost")
+		meta(charset="UTF-8")
+		meta(name='viewport', content='width=device-width, initial-scale=1' )
+		link(rel="stylesheet", href="css/sty-sec.css")
+		link(rel="stylesheet", href="css/sty.css")
+		title Luis Migueles
+		style.
+			body{
+				background-attachment: fixed;
+			}
+			.container{
+				justify-content: center!important;
+			}
+	body.js-scroll
+		header
+			a(href="index.html"): h1 Luis Migueles
+		main
+			.container.cnt-hide
+				.container-header
+						h2 SHOP
+						a(href="index.html")#ctavolver
+							.volver Volver
+								img(src="img/previous.png", alt="")
+						#search: input(type="text", placeholder="Buscar...")
+			.container.cnt-hide
+				.shop-grid
+					a(href="producto.html").shop-item(data-key= 'monkey', data-categoria="animales")
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name monkey
+							.shop-item-desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur illum commodi laboriosam ipsum mollitia veritatis, natus modi aliquam voluptas nam ea dicta et voluptates ut nesciunt saepe fugiat impedit illo.
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $100
+					a(href="#item-shop").shop-item(data-key= 'rat', data-categoria="animales")
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name rat
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $1000.00
+					a(href="#item-shop").shop-item(data-key= 'dog', data-categoria="perros").oferta
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name dogesp
+							.shop-item-desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur illum commodi laboriosam ipsum mollitia veritatis, natus modi aliquam voluptas nam ea dicta et voluptates ut nesciunt saepe fugiat impedit illo.
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $1000.00
+					a(href="#item-shop").shop-item(data-key= 'dog', data-categoria="perros").oferta
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name dog
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $1000.00
+					a(href="#item-shop").shop-item(data-key= 'dog', data-categoria="perros").oferta
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name dog
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $1000.00
+					a(href="#item-shop").shop-item(data-key= 'dog', data-categoria="perros").oferta
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name dog
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $1000.00
+					a(href="#item-shop").shop-item(data-key= 'dog', data-categoria="perros").oferta
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name dog
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $1000.00
+					a(href="#item-shop").shop-item(data-key= 'dog', data-categoria="perros").oferta
+						.shop-item-img: img(src="js/res/js.png")
+						.shop-item-info
+							.shop-item-name dog
+							.shop-item-precio-oferta $888.88
+							.shop-item-precio $1000.00
+
+			#cnt_form
+				#close
+				input(type="text", name="nombre", placeholder="Nombre")
+				input(type="email", name="email", placeholder="Correo electrónico")
+				textarea(name="text", cols="30", rows="10", placeholder="Mensaje")
+				button(id="submit") Enviar
+				//-button.cancelar Cancelar
+		footer
+			p Copyright &copy; 2017 Nicolas Migueles
+			.right
+				.contacto Contacto
+				.social 
+					a(href="http://instagram.com/luismigueles800", target="_blank")
+						img(src="img/instagram.svg", rel="nofollow")
+					a(href="https://twitter.com/luismigueles", target="_blank")
+						img(src="img/twitter.svg", rel="nofollow")
+		script(src="js/res/jquery-3.1.1.min.js")
+		script(src="js/main.js")
