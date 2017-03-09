@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+html
+	head
+		//- base(src="localhost")
+		meta(charset="UTF-8")
+		//-meta(description="")
+		meta(name='viewport', content='width=device-width, initial-scale=1' )
+		link(rel="stylesheet", href="css/sty.css")
+		title Luis Migueles
+	body
+		.bg-full-page
+		header
+			h1 Luis Migueles
+			//-span Coach
+		main
+
+			.container.cnt-hide
+				.a
+					//-Panel A - Entrená con nosotros
+					.slider
+						a(href="trainwus.html").item
+							h1 Entrená con <br>
+								span nosotros...
+						a(href="#tips").item
+							h1 Tips <br>
+								span Consejos
+
+				a(href="taller.html").b 
+					//-Panel C - Taller de Técnica
+					p TALLER<br>
+						span.line
+						span DE
+						span.line
+						<br>TÉCNICA
+
+				a(href="#mihistory").c
+					//-Panel B - Mi historia
+					.wraper
+						h1 MI
+						span HISTORIA
+				a(href="shop.html").d
+					h1 SHOP <br>
+					p ACCESORIOS
+					//-Panel D - Shop Accesorios
+
+			#cnt_form
+				#close
+				input(type="text", name="nombre", placeholder="Nombre")
+				input(type="email", name="email", placeholder="Correo electrónico")
+				textarea(name="text", cols="30", rows="10", placeholder="Mensaje")
+				button(id="submit") Enviar
+				//-button.cancelar Cancelar
+
+		footer
+			p Copyright &copy; 2017 Nicolas Migueles
+			.right
+				.contacto Contacto
+				.social 
+					a(href="http://instagram.com/luismigueles800", target="_blank")
+						img(src="img/instagram.svg", rel="nofollow")
+					a(href="https://twitter.com/luismigueles", target="_blank")
+						img(src="img/twitter.svg", rel="nofollow")
+
+
+		script(src="js/res/jquery-3.1.1.min.js")
+		script(src="js/main.js")
