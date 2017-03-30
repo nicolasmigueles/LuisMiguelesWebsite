@@ -7,6 +7,6 @@ define('DB_CHARSET','utf-8');
 
 
 require('core/models/conn.Class.php');
-require('core/models/Inscripciones.Class.php');
+require('core/models/Taller.Class.php');
 require('core/bin/functions/functions.php');
  ?>
