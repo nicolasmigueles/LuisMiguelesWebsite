@@ -8,21 +8,24 @@ $tel = isset($_POST['tel']) ? $_POST['tel'] : null;
 
 
 $taller = new Taller;
-$shop = new Shop;
+$cant_ins = $taller->cantidad_inscriptos();
 switch ($mode) {
-  case 'ins':
-    $taller->inscribir($name,$ape,$email,$tel);
+  case 'inscribir':
+    $taller->Inscribir($cant_ins);
+    break;
+  case 'editar':
+    $taller->Editar();
+    break;
+  case 'borrar':
+    $id = isset($_GET['id']) ? $_GET['id'] : false;
+    if ($id != false) {
+      $taller->Delete($id,$cant_ins);
+    }
+    break;
+  case 'inscribir':
     break;
 
   default:
-
-    $shop->addProductoalCarrito(1);
-    $shop->addProductoalCarrito(2);
-    //echo $shop->inCarrito(0);
-    var_dump($shop->box());
-    echo $shop->prod->Precio(1).'+'.$shop->prod->Precio(2);
-    echo "<br>".$shop->Subtotal();
-
     include('html/tophp/index.php');
     break;
 }
