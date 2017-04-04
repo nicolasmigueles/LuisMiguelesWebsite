@@ -5,8 +5,8 @@
 class Shop
 {
   protected $_db;
-  public $prod;
   protected $carro;
+  public $prod;
   public $Subtotal;
   public $TasaDesc;
   public $TotalDesc;
@@ -61,11 +61,11 @@ class Shop
     return $this->prod->TotalProductos();
   }
 // Carrito de compras, productos;
-  public function inCarrito($indice){
+  public function box_in($indice){
     return $this->carro->inbox($indice);
   }
   public function box(){
-    return $this->carro->box; //(Devuelve el array);
+    return $this->carro->box;
   }
   public function addProductoalCarrito($idprod){
     if ($this->prod->ExisteProducto($idprod)) {

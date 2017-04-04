@@ -14,6 +14,7 @@ class Carrito
   public function __construct(){
     $this->_db = new Con;
     $this->prod = new Producto;
+    $this->box = 0;
   }
   public function add($idprod){
     if ($this->box == null) {
@@ -25,9 +26,6 @@ class Carrito
   public function remove($idprod){
     unset($this->box[$idprod]);  //buscar en el array el id y eliminarlo;
   }
-  /*public function delete($idprod){ // buscar todos los id y eliminarlo;
-
-  }*/
   public function inbox($indice){
     return $this->box[$indice];
   }

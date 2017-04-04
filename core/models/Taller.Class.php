@@ -5,14 +5,13 @@
 class Taller
 {
   protected $db;
-  public $cant_ins;
-#nuevo inscripto.
   protected $nombre;
   protected $apellido;
   protected $email;
   protected $telefono;
   protected $fecha;
   protected $estado;
+  public $cant_ins;
 
   public function __construct(){
     $this->db = new Con;
@@ -42,7 +41,6 @@ class Taller
         exit;
       }
     }
-  # agregar inscripto
   public function Inscribir($ins_cant) {
       $this->ErrorsIns('?view=panel&error=');
       $sql  = "INSERT INTO inscriptos (nombre,apellido,email,telefono,fecha,conf,estado,asistio) VALUES ('$this->nombre','$this->apellido','$this->email','$this->telefono','$this->fecha','0','$this->estado','0');";
@@ -128,12 +126,11 @@ class Taller
     }
   }
   public function cantidad_inscriptos(){ //devuelve en cant_ins la cant de inscriptos actuales.
-    $CONSULTA = $this->_db->query("SELECT estate FROM options WHERE id=3");
-    $this->cant_ins = $this->_db->recorrer($CONSULTA)[0];
-    $this->_db->liberar($CONSULTA);
+    $CONSULTA = $this->db->query("SELECT estate FROM options WHERE id=3");
+    $this->cant_ins = $this->db->recorrer($CONSULTA)[0];
+    $this->db->liberar($CONSULTA);
     return $this->cant_ins;
   }
+
 }
-
-
- ?>
+?>
