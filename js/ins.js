@@ -1,6 +1,6 @@
 (function($) {
 	$(document).ready(function() {
-	
+
 	});
 	// Inscribirse cta
 	$("#cta-ins").click(function(){
@@ -13,6 +13,7 @@
 		var tel = $("#form-tel");
 		var email = $("#form-email");
 		var fecha = $("#form-fecha");
+		var form = $("#formins");
 		var submit = $(this);
 		var send  = true;
 		if (name.val() == '') {
@@ -33,9 +34,8 @@
 			send = false;
 		}
 		if (send){
-			name.hide();apellido.hide();tel.hide();email.hide();fecha.hide();submit.hide();
-
+			form.submit();
 		}
 	});
-	
+
 })(jQuery);

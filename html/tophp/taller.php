@@ -16,11 +16,11 @@
     </style>
   </head>
   <body>
-    <header><a href="index.html">
+    <header><a href="?view=index">
         <h1>Luis Migueles</h1></a></header>
     <main class="full">
       <div class="container cnt-hide">
-        <div class="container-header"><a href="index.html" id="ctavolver">
+        <div class="container-header"><a href="?view=index" id="ctavolver">
             <div class="volver"><img src="img/previous.png" alt=""/></div></a>
           <div class="svg">
             <svg width="125" height="67" xmlns="http://www.w3.org/2000/svg">

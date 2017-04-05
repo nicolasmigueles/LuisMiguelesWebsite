@@ -1,7 +1,6 @@
  <!DOCTYPE html>
 html
 	head
-		//- base(src="localhost")
 		meta(charset="UTF-8")
 		meta(name='viewport', content='width=device-width, initial-scale=1' )
 		link(rel="stylesheet", href="css/sty-sec.css")
@@ -57,9 +56,9 @@ html
 							.spancenter
 								span Se abona en el lugar, el día del evento.<br>Cupos limitados, al final del taller se hace entrega de un diploma de participación
 			#ins_form.
-				<form action="" id="ins" method="post" enctype="multipart/form-data">
+				<form action="?view=taller&mode=inscribir" id="formins" method="post" enctype="multipart/form-data">
 				<input name="name" id="form-name" class="ins" type="text" placeholder="Nombre...">
-				<input name="apellido" id="form-apellido" class="ins" type="text" placeholder="Apellido...">
+				<input name="ape" id="form-apellido" class="ins" type="text" placeholder="Apellido...">
 				<input name="email" id="form-email" class="ins" type="e-mail" placeholder="E-Mail...">
 				<input name="tel" id="form-tel" class="ins" type="text" placeholder="Celular...">
 				<input name="fecha" id="form-fecha" class="ins disabled" type="text" value="22 de enero" disabled>

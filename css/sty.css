@@ -325,7 +325,8 @@ main {
     line-height: 45px;
     font-size: 1.5em;
     text-transform: uppercase;
-    border-radius: 1em; }
+    border-radius: 1em;
+    cursor: pointer; }
 
 footer {
   display: -webkit-flex;

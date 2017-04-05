@@ -17,7 +17,7 @@ switch ($mode) {
     }
     break;
   default:
-    include('html/tophp/index.php');
+    include('html/tophp/taller.php');
     break;
 }
 ?>
