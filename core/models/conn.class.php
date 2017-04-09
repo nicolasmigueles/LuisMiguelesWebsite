@@ -18,6 +18,9 @@ class Con extends mysqli {
   public function recorrer($query) {
     return mysqli_fetch_array($query);
   }
+  public function assoc($query){
+    return mysqli_fetch_assoc($query);
+  }
 }
 
 ?>

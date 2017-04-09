@@ -8,6 +8,7 @@ define('PUNTO_REPOSICION_STOCK', '5');
 
 require('core/models/conn.Class.php');
 require('core/models/Taller.Class.php');
+require('core/models/Categorias.Class.php');
 require('core/models/Shop.Class.php');
 require('core/models/Carrito.Class.php');
 require('core/models/Producto.Class.php');

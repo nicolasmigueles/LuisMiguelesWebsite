@@ -72,7 +72,7 @@ class Shop
       $this->carro->add($idprod);// chekear si ya existe que agrege uno;
     }
   }
-  public function removeProductodelCarrito($idprod){
+  public function reduceProductodelCarrito($idprod){
     if ($this->prod->ExisteProducto($idprod)) {
       $this->carro->remove($idprod);// chekear si habia uno, delete($idprod);
     }
