@@ -29,6 +29,13 @@ class Carrito
   public function inbox($indice){
     return $this->box[$indice];
   }
+  public function ProductosInbox(){
+    $resp = Array();
+    foreach($this->box as $prod => $i){
+      array_push($resp,$this->prod->BuscarProducto($i));
+    }
+    return $resp;
+  }
   public function Subtotal(){
     foreach ($this->box as $i => $id) {
       $this->Subtotal = $this->Subtotal + $this->prod->Precio($id);

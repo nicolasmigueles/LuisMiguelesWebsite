@@ -9,18 +9,19 @@ class Categorias
   public function __construct(){
     $this->db = new Con;
   }
+  // All working and tested 10/4 Nicolás Migueles
   public function AddCategoria($nombre){
-    $q = $this->db->query("INSERT INTO categorias SET nombre = $nombre LIMIT 1;");
+    $q = $this->db->query("INSERT INTO categorias (nombre) VALUES ('$nombre')")or die(mysqli_error($this->db));
     return ($q ? true : false);
   }
-  public function DelCategoria($nombre){
-    $q = $this->db->query("DELETE FROM categorias WHERE nombre = $nombre LIMIT 1;");
-    return ($q ? true : false);
+  public function DelCategoria($id){
+    $q = $this->db->query("DELETE FROM categorias WHERE id = $id;");
+    return $q ? true : false;
   }
-  public function ToggleVisibleCategoria($nombre){
-    $qu = $this->db->query("SELECT visible FROM categorias WHERE nombre = $nombre");
+  public function ToggleVisibleCategoria($id){
+    $qu = $this->db->query("SELECT visible FROM categorias WHERE id = $id") or die(mysqli_error($this->db));
     $new = $this->db->recorrer($qu)[0] == 1 ? 0 : 1;
-    $q = $this->db->query("UPDATE categorias SET visible = $new WHERE nombre = $nombre LIMIT 1;");
+    $q = $this->db->query("UPDATE categorias SET visible = $new WHERE id = $id LIMIT 1;");
     return ($q ? true : false);
   }
   public function Categoria($id){
@@ -34,8 +35,19 @@ class Categorias
     return $this->db->recorrer($q2)[0];
   }
   public function ArrayCategorias(){
-    $q = $this->db->query("SELECT nombre FROM categorias");
-    return $this->recorrer($q);
+    $array = Array();
+    $q = $this->db->query("SELECT * FROM categorias WHERE visible = 1");
+    $a = 0;
+    while ($a <= ($this->db->rows($q)-1)) {
+      array_push($array,$this->db->recorrer($q)[1]);
+      $a++;
+    }
+    return $array;
+
+  }
+  public function CantCategorias(){
+    $q = $this->db->query("SELECT COUNT(*) FROM categorias;");
+    return $this->db->recorrer($q)[0];
   }
 }
 ?>

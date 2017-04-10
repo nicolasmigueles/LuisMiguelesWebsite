@@ -4,7 +4,7 @@
  */
 class Producto
 {
-  protected $_db;
+  protected $db;
   public $nombre;
   public $descripcion;
   public $precio;
@@ -16,7 +16,7 @@ class Producto
 
 
   public function __construct(){
-    $this->_db = new Con;
+    $this->db = new Con;
     $this->inited = false;
   }
   public function _init($array = null){
@@ -32,8 +32,8 @@ class Producto
     $this->inited = true;
   }
   public function BuscarProducto($id){
-    $q = $this->_db->query("SELECT * FROM productos WHERE (id=$id)");
-    $consulta = $this->_db->recorrer($q);
+    $q = $this->db->query("SELECT * FROM productos WHERE id = '$id'") or die( mysqli_error( $this->db ));
+    $consulta = $this->db->assoc($q);
     $array = array('nombre' => $consulta['nombre'],
               'descripcion' => $consulta['descripcion'],
               'precio' => $consulta['precio'],
@@ -42,14 +42,15 @@ class Producto
             );
     $this->datos = $array;
     $this->_init($array);
+    return $this->datos;
   }
   public function ExisteProducto($id){
-    $q = $this->_db->query("SELECT * FROM productos WHERE (id=$id)");
-    return $this->_db->rows($q) > 0 ? true : false;
+    $q = $this->db->query("SELECT * FROM productos WHERE (id=$id)");
+    return $this->db->rows($q) > 0 ? true : false;
   }
   public function NuevoProducto(){
     $this->CheckDatos('?view=error&num=');
-    $this->_db->query("INSERT INTO productos (`id`, `nombre`, `descripcion`, `img`, `precio`, `stock`, `visible`, `cod`) VALUES (NULL, $this->nombre, $this->descripcion, $this->foto, $this->precio, $this->stock, '1', NULL)");
+    $this->db->query("INSERT INTO productos (`id`, `nombre`, `descripcion`, `img`, `precio`, `stock`, `visible`, `cod`) VALUES (NULL, $this->nombre, $this->descripcion, $this->foto, $this->precio, $this->stock, '1', NULL)");
   }
   public function CheckDatos($url){
     try {
@@ -79,7 +80,7 @@ class Producto
   }
   public function CambiarPrecio($id,$nuevoprecio){
     $this->BuscarProducto($id);
-    $a = $this->_db->query("UPDATE productos SET precio = $nuevoprecio WHERE (id=$id)");
+    $a = $this->db->query("UPDATE productos SET precio = $nuevoprecio WHERE (id=$id)");
   }
   public function Precio($id){
     $this->BuscarProducto($id);
@@ -87,21 +88,22 @@ class Producto
   }
   public function HayStock($id){
     $this->BuscarProducto($id);
-    if ($this-stock <= PUNTO_REPOSICION_STOCK) {
-      // ALERTAR DE STOCK
+    $stock = $this->datos['stock'];
+    if ($stock < PUNTO_REPOSICION_STOCK && $stock != 0) {
+      return 3; // If HayStock(x) === 3 ; REPONER;
     }
-    return $this->stock != 0 ? true : false;
+    return $this->stock == 0 ? false : true;
   }
   public function DescuentoenPlata($id){
-    $a = $this->_db->query("SELECT cod FROM productos WHERE (id=$id)");
-    $cod = $this->_db->recorrer($a)[0];
-    $q = $this->_db->query("SELECT tasa FROM promociones WHERE (cod=$cod)");
-    $tasa = $this->_db->recorrer($q)[0];
+    $a = $this->db->query("SELECT cod FROM productos WHERE (id=$id)");
+    $cod = $this->db->recorrer($a)[0];
+    $q = $this->db->query("SELECT tasa FROM promociones WHERE (cod=$cod)");
+    $tasa = $this->db->recorrer($q)[0];
     return $this->Precio($id) * ($tasa / 100);
   }
   public function TotalProductos(){
-    $q = $this->_db->query("SELECT COUNT(nombre) FROM productos");
-    return $this->_db->recorrer($q)[0];
+    $q = $this->db->query("SELECT COUNT(nombre) FROM productos");
+    return $this->db->recorrer($q)[0];
   }
 // FIN CLASS;
 }
