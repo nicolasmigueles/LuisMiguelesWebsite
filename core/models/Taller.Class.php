@@ -41,10 +41,10 @@ class Taller
         exit;
       }
     }
-  public function Inscribir($ins_cant) {
+  public function Inscribir() {
       $this->ErrorsIns('?view=error');
       $sql  = "INSERT INTO inscriptos (nombre,apellido,email,telefono,fecha,conf,estado,asistio) VALUES ('$this->nombre','$this->apellido','$this->email','$this->telefono','$this->fecha','0','$this->estado','0');";
-      $sql .= "UPDATE options SET estate = $ins_cant + 1 where id = '3'";
+      $sql .= "UPDATE options SET estate = $this->cantidad_inscriptos() + 1 where id = '3'";
       $this->db->multi_query($sql);
   }
   public function Editar() {
@@ -52,9 +52,9 @@ class Taller
     $sql = "UPDATE inscriptos SET nombre = '$this->nombre', apellido = '$this->apellido', email = '$this->email',telefono = '$this->telefono',fecha = '$this->fecha',conf = '0', estado = '$this->estado',asistio = '0' where id = '$id'";
     $this->db->query($sql)or die(mysqli_error($this->db));
   }
-  public function Delete($id,$ins_cant) {
+  public function Delete($id) {
     $sql = "DELETE FROM inscriptos where id = '$id';";
-    $sql .= "UPDATE options SET estate = $ins_cant - 1 where id = '3';";
+    $sql .= "UPDATE options SET estate = $this->cantidad_inscriptos() - 1 where id = '3';";
     $this->db->multi_query($sql);
   }
   public function DarDeBaja($id) {

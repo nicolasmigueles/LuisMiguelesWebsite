@@ -12,9 +12,7 @@ class Producto
   public $stock;
   protected $inited;
   public $datos;
-  //public $oferta;
-
-
+  
   public function __construct(){
     $this->db = new Con;
     $this->inited = false;
@@ -68,19 +66,17 @@ class Producto
       exit;
     }
   }
-  public function loadProducto($array = null){
-    if ($array == null && $this->inited) {
-      return $this->nombre;
-    }
-    if ($this->inited) {
-      return $this->nombre;
-    }else{
-      return "No hay un producto cargado en la clase";
-    }
-  }
   public function CambiarPrecio($id,$nuevoprecio){
-    $this->BuscarProducto($id);
-    $a = $this->db->query("UPDATE productos SET precio = $nuevoprecio WHERE (id=$id)");
+    if ($this->ExisteProducto($id)) {
+      $a =$this->db->query("UPDATE productos SET precio = $nuevoprecio WHERE (id=$id)");
+      if ($a) {
+        header('location: ?view=productos');
+      }else{
+        header('location: ?view=error');
+      }
+    }else{
+      header('location: ?view=error');
+    }
   }
   public function Precio($id){
     $this->BuscarProducto($id);

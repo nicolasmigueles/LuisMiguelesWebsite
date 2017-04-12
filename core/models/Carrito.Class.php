@@ -14,7 +14,6 @@ class Carrito
   public function __construct(){
     $this->_db = new Con;
     $this->prod = new Producto;
-    $this->box = 0;
   }
   public function add($idprod){
     if ($this->box == null) {

@@ -32,8 +32,7 @@ class Shop
   }
   public function AplicarPromoAProducto($idprod,$codpromo){
     if ($this->ExistePromo($codpromo)) {
-      $producto = $this->prod->ExisteProducto($idprod); // return boolean
-      if ($producto) {
+      if ($this->prod->ExisteProducto($idprod)) {
         $this->_db->query("UPDATE productos SET promo = $cod WHERE id = $idprod");
         return "Promoción Aplicada.";
       }else{
@@ -44,8 +43,7 @@ class Shop
     }
   }
   public function QuitarPromoAProducto($idprod){
-    $producto = $this->prod->ExisteProducto($idprod); // return boolean
-    if ($producto) {
+    if ($this->prod->ExisteProducto($idprod)) {
       $this->_db->query("UPDATE productos SET promo = '0' WHERE id = $idprod");
       return "Promoción Removida.";
     }
@@ -55,7 +53,7 @@ class Shop
     return $this->prod->BuscarProducto($id); //Array con data;
   }
   public function precioProducto($id){
-    return $this->prod->inited == false ? "No hay cargado ningún producto." : $this->prod->Precio($id);
+    return $this->prod->Precio($id);
   }
   public function Cantidad_de_Productos(){
     return $this->prod->TotalProductos();
@@ -65,21 +63,27 @@ class Shop
     return $this->carro->inbox($indice);
   }
   public function box(){
-    return $this->carro->box;
+    //return $this->carro->box;
   }
   public function addProductoalCarrito($idprod){
     if ($this->prod->ExisteProducto($idprod)) {
       $this->carro->add($idprod);// chekear si ya existe que agrege uno;
+    }else{
+      header('location: ?view=error&msg=El_producto_ingresado_no_existe');
     }
   }
   public function reduceProductodelCarrito($idprod){
     if ($this->prod->ExisteProducto($idprod)) {
       $this->carro->remove($idprod);// chekear si habia uno, delete($idprod);
+    }else{
+      header('location: ?view=error&msg=El_producto_ingresado_no_existe');
     }
   }
   public function deleteProductodelCarrito($idprod){
     if ($this->prod->ExisteProducto($idprod)) {
       $this->carro->delete($idprod); // chekear si estaba antes en el carro;
+    }else{
+      header('location: ?view=error&msg=El_producto_ingresado_no_existe');
     }
   }
 // Mostrar Valores al usuario del total a pagar;
