@@ -5,6 +5,7 @@ define('DB_PASS','');
 define('DB_TABLE','admin_panel');
 define('DB_CHARSET','utf-8');
 define('PUNTO_REPOSICION_STOCK', '5');
+define('CBU','copiar cbu del mail');
 
 require('core/models/conn.Class.php');
 require('core/models/Taller.Class.php');

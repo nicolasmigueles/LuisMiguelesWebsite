@@ -33,7 +33,7 @@ class Taller
           $this->apellido = $this->db->real_escape_string($_POST['ape']);
           $this->email = $this->db->real_escape_string($_POST['email']);
           $this->telefono = $this->db->real_escape_string($_POST['tel']);
-          $this->estado = 3;
+          $this->estado = 0;
           $this->fecha = $fecha_taller_activo;
         }
       } catch (Exception $error) {
@@ -42,10 +42,15 @@ class Taller
       }
     }
   public function Inscribir() {
+      $ci = $this->cantidad_inscriptos() + 1;
       $this->ErrorsIns('?view=error');
       $sql  = "INSERT INTO inscriptos (nombre,apellido,email,telefono,fecha,conf,estado,asistio) VALUES ('$this->nombre','$this->apellido','$this->email','$this->telefono','$this->fecha','0','$this->estado','0');";
-      $sql .= "UPDATE options SET estate = $this->cantidad_inscriptos() + 1 where id = '3'";
-      $this->db->multi_query($sql);
+      $sql .= "UPDATE options SET estate = $ci where id = '3'";
+      $q = $this->db->multi_query($sql);
+      $sql = "SELECT MAX(id) AS id FROM inscriptos"; // no se si funciona, probar.
+      $q = $this->db->query($sql);
+      $query_id = $this->db->recorrer($q)[0];
+      header('location: ?view=taller&mode=select_payment&id='.$query_id);
   }
   public function Editar() {
     $this->ErrorsIns('?view=error');
@@ -64,8 +69,12 @@ class Taller
     $sql = $this->db->query("UPDATE inscriptos SET estado = '3' where id = '$id'");
   }
   public function Efectivo($id) {
+    $sql = $this->db->query("UPDATE inscriptos SET estado = '3' where id = '$id'");
+    header('location: ?view=taller&mode=response&msg=1');
+  }
+  public function Transferencia($id){
     $sql = $this->db->query("UPDATE inscriptos SET estado = '1' where id = '$id'");
-    header('location: panel/inscriptos/'.$id.'-Done');
+    header('location: ?view=taller&mode=response&msg=2');
   }
   public function ToggleConfirm($id,$m) {
     if ($m == 'c') {
